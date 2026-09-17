@@ -330,6 +330,16 @@ footer{background:var(--navy-950);color:var(--gold-100);padding:70px 0 24px;}
 .form-feedback{margin-top:16px;padding:12px 14px;border-radius:var(--radius-s);background:var(--gold-100);color:var(--navy-950);}
 
 /* =========================================================
+   CORRECTION DU DÉBORDEMENT HORIZONTAL MOBILE
+   ========================================================= */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width:1080px){
@@ -374,3 +384,137 @@ footer{background:var(--navy-950);color:var(--gold-100);padding:70px 0 24px;}
   .hero{padding:64px 0 40px;}
 }
 @media (min-width:641px) and (max-width:900px){.content-grid{grid-template-columns:1fr 1fr;}}
+
+
+/* =========================================================
+   E.S.R.I — CORRECTIONS RESPONSIVE
+   ========================================================= */
+
+/* Évite les débordements horizontaux */
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Les images restent toujours dans leur conteneur */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Les éléments de formulaire ne dépassent pas l'écran */
+input,
+textarea,
+select,
+button {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Empêche les longues adresses/emails de casser la mise en page */
+p,
+a,
+h1,
+h2,
+h3,
+h4 {
+    overflow-wrap: break-word;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1020px) {
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .navbar {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .nav-inner {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .nav-actions {
+        flex-shrink: 0;
+    }
+
+    .burger {
+        flex-shrink: 0;
+    }
+
+    .content-grid {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .content-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .formation-image {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+/* =========================================================
+   PETITS SMARTPHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .brand-text span {
+        font-size: 0.7rem;
+    }
+
+    .brand-mark {
+        flex-shrink: 0;
+    }
+
+    .page-banner {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .page-banner h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .content-card {
+        padding: 20px;
+    }
+
+    .content-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .content-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+}
